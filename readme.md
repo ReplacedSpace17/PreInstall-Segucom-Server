@@ -39,6 +39,9 @@ __________________________________________________
 #PM2 en el backend
 Utiliza un gestor de procesos como PM2 para mantener tu aplicación en funcionamiento y manejar reinicios automáticos en caso de fallos.
 sudo npm install -g pm2
+O
+ sudo npm install -g yarn
+sudo yarn global add pm2
 pm2 start index.js --name "BackendSegucom"
 pm2 startup
 pm2 save
