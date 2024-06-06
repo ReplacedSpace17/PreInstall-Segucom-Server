@@ -1,0 +1,2 @@
+
+sudo mysql -u root -p segucomm_db < /ruta/al/archivo/segucomm_db.sql
