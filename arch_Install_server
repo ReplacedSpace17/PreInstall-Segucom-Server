@@ -1,3 +1,12 @@
+
+#INSERT SEED IN DATABASE
+
 CREATE DATABASE segucomm_db;
 
 sudo mysql -u root -p segucomm_db < /home/rs17/Documentos/segucomm_db.sql
+
+-- Crear el usuario api_user con una contraseña segura
+CREATE USER 'server_user'@'localhost' IDENTIFIED BY '6L@11Sk32gA#';
+GRANT ALL PRIVILEGES ON segucomm_db.* TO 'server_user'@'localhost';
+FLUSH PRIVILEGES;
+
