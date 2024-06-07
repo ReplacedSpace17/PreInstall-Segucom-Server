@@ -1,5 +1,8 @@
 # Configuración del Servidor en Arch Linux
 
+Asignar IP estatica en puerta de enlace
+
+
 ## Actualizar el Sistema
 Para actualizar sistema ejecutar:
 
