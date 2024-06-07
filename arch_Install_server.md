@@ -134,6 +134,14 @@ sudo mysql -u root -p segucomm_db < ubicacion
 
 ```
 
+```sh
+UPDATE PERFIL_ELEMENTO
+SET PERFIL_CLAVE = NULL
+WHERE ELEMENTO_NUMERO = 80000;
+```
+
+
+
 Probar que el backend funciona, ejecutar en la carpeta de BackendSegucom:
 ```sh
 node index.js
