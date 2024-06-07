@@ -111,8 +111,80 @@ __________________________________________
 
 
 
-## Lanzar a producción
+## Configurar un service
+
+```sh
+sudo nano /etc/systemd/system/backendsegucom.service
+
+```
+Agregar este contenido:
+
 
 ```sh
 
+[Unit]
+Description=Backend Segucom Node.js Application
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/rs17/Documentos/Despliegue/BackendSegucom/index.js
+WorkingDirectory=/home/rs17/Documentos/Despliegue/BackendSegucom
+Restart=always
+User=rs17
+Group=rs17
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+# Si estás usando pm2, el comando sería algo como:
+# ExecStart=/usr/bin/pm2 start /home/rs17/Documentos/Despliegue/BackendSegucom/index.js --name backendsegucom
+
+[Install]
+WantedBy=multi-user.target
+
+
 ```
+
+Recarga la configuración:
+
+```sh
+sudo systemctl daemon-reload
+```
+
+Activar el service
+```sh
+sudo systemctl enable backendsegucom
+sudo systemctl start backendsegucom
+sudo systemctl status backendsegucom
+```
+
+
+__________________________________________
+
+
+
+## Configura el portforwarding
+
+Obtener la ip publica
+
+```sh
+curl ifconfig.me
+
+```
+Ir a la puerta de enlace y agregar las reglas
+
+
+En el server permitir la entrada
+```sh
+sudo ufw allow 443
+sudo ufw reload
+
+```
+
+reemplazar la url del backend config en mapas por la ip publica
+
+
+
+
+
+
+
+
