@@ -19,8 +19,11 @@ sudo pacman -S openssh
 sudo systemctl start sshd
 sudo systemctl enable sshd
 sudo pacman -S ufw
-sudo ufw allow OpenSSH
+sudo ufw allow 22/tcp
+sudo ufw status verbose
+sudo ufw disable
 sudo ufw enable
+
 ```
 
 __________________________________________
