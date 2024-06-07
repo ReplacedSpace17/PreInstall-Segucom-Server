@@ -1,6 +1,8 @@
 # Configuración del Servidor en Arch Linux
 
 Asignar IP estatica en puerta de enlace
+Obtener la direccion mac:
+ip link show
 
 
 ## Actualizar el Sistema
@@ -29,12 +31,32 @@ sudo ufw enable
 
 ```
 
+```sh
+sudo apt install openssh-server
+sudo systemctl start ssh
+sudo systemctl enable ssh
+sudo apt update
+sudo apt install ufw
+sudo ufw allow 22/tcp
+sudo ufw status verbose
+sudo ufw disable
+sudo ufw enable
+
+```
+
 __________________________________________
 
 ## Instalar Node.js y npm:
 
 ```sh
 sudo pacman -S nodejs npm
+node -v
+npm -v
+
+```
+
+```sh
+sudo apt install nodejs npm
 node -v
 npm -v
 
@@ -50,6 +72,14 @@ sudo systemctl start mariadb
 sudo systemctl enable mariadb
 sudo mysql_secure_installation
 ```
+
+```sh
+sudo apt install mariadb-server
+sudo mysql_secure_installation
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+```
+
 Para conectarte al cliente:
 ```sh
 sudo mysql -u root -p
