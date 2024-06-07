@@ -1,10 +1,9 @@
 # Configuración del Servidor en Arch Linux
 
 ## Actualizar el Sistema
-
 ```sh
 sudo pacman -Syu
-
+```
 
 ________________________
 ##Instalar y configurar ssh
