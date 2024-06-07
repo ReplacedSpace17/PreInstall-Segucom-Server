@@ -1,12 +1,19 @@
+# Configuración del Servidor en Arch Linux
 
-#INSERT SEED IN DATABASE
+## Actualizar el Sistema
 
-CREATE DATABASE segucomm_db;
+```sh
+sudo pacman -Syu
 
-sudo mysql -u root -p segucomm_db < /home/rs17/Documentos/segucomm_db.sql
 
--- Crear el usuario api_user con una contraseña segura
-CREATE USER 'server_user'@'localhost' IDENTIFIED BY '6L@11Sk32gA#';
-GRANT ALL PRIVILEGES ON segucomm_db.* TO 'server_user'@'localhost';
-FLUSH PRIVILEGES;
+________________________
+##Instalar y configurar ssh
+```sh
+sudo pacman -S openssh
+sudo systemctl start sshd
+sudo systemctl enable sshd
 
+# (Opcional) Configurar firewall para permitir SSH
+sudo pacman -S ufw
+sudo ufw allow OpenSSH
+sudo ufw enable
