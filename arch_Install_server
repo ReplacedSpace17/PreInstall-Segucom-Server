@@ -1,2 +1,3 @@
+CREATE DATABASE segucomm_db;
 
-sudo mysql -u root -p segucomm_db < /ruta/al/archivo/segucomm_db.sql
+sudo mysql -u root -p segucomm_db < /home/rs17/Documentos/segucomm_db.sql
