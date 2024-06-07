@@ -22,13 +22,7 @@ sudo pacman -S ufw
 sudo ufw allow OpenSSH
 sudo ufw enable
 ```
-__________________________________________
 
-## Conectarse por ssh:
-
-```sh
-
-```
 __________________________________________
 
 ## Instalar Node.js y npm:
@@ -50,7 +44,10 @@ sudo systemctl start mariadb
 sudo systemctl enable mariadb
 sudo mysql_secure_installation
 ```
-
+Para conectarte al cliente:
+```sh
+sudo mysql -u root -p
+```
 __________________________________________
 
 ## Conectarse por ssh:
@@ -59,10 +56,7 @@ Reemplazar ip y user por sus correspondientes.
 ssh user@ip 
 ```
 
-Para conectarte al cliente:
-```sh
-sudo mysql -u root -p
-```
+
 
 
 
@@ -112,4 +106,10 @@ Abrir un navegador y validar que está activo /test
 
 __________________________________________
 
-Lanzar a producción:
+
+
+## Lanzar a producción
+
+```sh
+
+```
