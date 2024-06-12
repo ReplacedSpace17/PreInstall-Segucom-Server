@@ -60,6 +60,13 @@ ns2.dynu.com
 ```
 Esperar hasta 72 hrs para validar que la configuración del dns haya cambiado en hostgator
 
+Solo configurar el portforwarding en el modem y acceder como
+http://segubackend.com:3000/test - Cambiar el puerto según la app
+
+
+
+NO ES NECESRAIO__________________________________
+
 ## Instalar NGINX
 Primeramente debemos instalas NGINX
 ```sh
