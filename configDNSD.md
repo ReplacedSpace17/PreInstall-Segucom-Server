@@ -1,5 +1,78 @@
+# Ubuntu 
+
+## Actualizar el Sistema
+Para actualizar sistema ejecutar:
+```sh
+sudo apt update
+```
+
+## Instalar y configurar el Cliente Dynu en tu Servidor
+Primeramente es necesario instalar el cliente de dynu:
+```sh
+sudo apt install ddclient
+```
+
+Para configurar nuestro cliente es necesario editar el archivo de configuración: 
+```sh
+sudo nano /etc/ddclient.conf
+```
+en arch sirvio este
+```sh
+sudo nano /etc/ddclient/ddclient.conf
+```
+Copia y pega la siguiente configuración, reemplaza tu usuario, contraseña y dominio en caso de ser necesario.
+```sh
+daemon=300
+syslog=yes
+mail-failure=root
+pid=/var/run/ddclient.pid
+ssl=yes
+use=web, web=checkip.dynu.com/, web-skip='IP Address'
+protocol=dyndns2
+server=api.dynu.com
+login=miranda24
+password='@322915Memotec'
+segubackend.com
+```
+Habilitar y Ejecutar ddclient:
+```sh
+sudo systemctl enable ddclient
+sudo systemctl start ddclient
+```
+Verifica que está corriendo:
+
+```sh
+sudo systemctl status ddclient
+```
+Puedes ingresar a https://www.dynu.com/en-US/ControlPanel/DDNS y verificar que aparezca la ip pública de tu máquina.
+DYNU - 
+
+User: 
+miranda24 
+Pass:
+@322915Memotec
+
+Puedes usar el siguiente comando para validar tu ip publica:
+
+```sh
+curl -4 ifconfig.me
+```
+
+## Cambiar los servers name de hostgator
+Ingresa al portal del hostgator https://cliente.hostgator.mx/dominios/
+Debes cambiar los servers name del dominio que deseas configurar por los de dynu.
+
+```sh
+ns1.dynu.com
+ns2.dynu.com
+```
+Esperar hasta 72 hrs para validar que la configuración del dns haya cambiado en hostgator
+
+Solo configurar el portforwarding en el modem y acceder como
+http://segubackend.com:3000/test - Cambiar el puerto según la app
 
 
+________________________________________
 # Arch 
 
 ## Actualizar el Sistema
