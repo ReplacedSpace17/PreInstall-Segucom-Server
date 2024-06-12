@@ -43,6 +43,12 @@ Verifica que está corriendo:
 sudo systemctl status ddclient
 ```
 Puedes ingresar a https://www.dynu.com/en-US/ControlPanel/DDNS y verificar que aparezca la ip pública de tu máquina.
+DYNU - 
+
+User: 
+miranda24 
+Pass:
+@322915Memotec
 
 Puedes usar el siguiente comando para validar tu ip publica:
 
